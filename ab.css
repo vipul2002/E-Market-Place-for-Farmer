@@ -1,0 +1,61 @@
+.bg-dark {
+    background-color: #04204e!important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 28px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+ margin-right: 200px;
+}
+
+.navbar-dark .navbar-nav .nav-item {
+    margin-right: 150px;
+}
+
+.main.content p {
+    padding: 40px;
+}
+
+.main {
+    display: flex;
+    
+}
+
+.img-1 {
+    margin: auto;
+    padding: 20px;
+}
+
+.main.content {
+    text-align: justify;
+    font-size: 20px;
+    font-family: serif;
+    
+}
+
+.content {
+    width: 700px;
+}
+
+@media screen and (max-width: 600px) {
+    .main.content{
+        text-align: justify;
+        justify-content: all;
+    }
+    .main {
+        flex-direction: column;
+        justify-content: all;
+        text-align: 
+
+    }
+    .img-1 {
+        margin: 100%;
+        display: block;
+    }
+}
+
+ 

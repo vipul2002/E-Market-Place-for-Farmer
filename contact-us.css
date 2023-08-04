@@ -1,0 +1,89 @@
+s*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.bg{
+	background-size: cover;
+    
+
+
+}
+body{
+	background-color: white;
+}
+
+.head{
+	background-color: #A3DD09;
+	border-radius: 5px;
+	margin-top: -40px;
+}
+
+
+.super{
+	border: 0;
+	outline: none;
+	width: 100%;
+	padding: 7px 0;
+	border-bottom: 2px solid #ccc;
+}
+.super ~ .focus-border{
+	position: absolute; bottom:0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #A3DD09;
+	transition: 0.4s;
+}
+.super:focus ~ .focus-border{
+	width: 100%;
+	transition: 0.4s;
+	left: 0 ;
+}
+.btn1{
+		color: black;
+	border: none;
+	outline: none;
+	width: 200px;
+	height: 40px;
+	margin-left: 110px;
+	border-radius: 20px;
+}
+g-dark{
+	background-color:white;
+	color: black
+}
+
+.navbar-brand{
+	font-weight: bold;
+	font-family: monospace;
+	font-size: 28px;
+
+}
+
+.navbar-light .navbar-nav .nav-link{
+	margin-top: auto;
+	font-weight: 400;
+	font-size: 20px;
+	text-transform: uppercase;
+	color:darkslategrey;
+}
+.navbar-light .navbar-nav .nav-item{
+	color: black;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+	
+	background: gray;
+    transition: .5s;
+    color: white;
+    text-decoration: none;
+}
+.navbar-light .navbar-nav .nav-item #nav{
+	color: black;
+}
+
+.active{
+	background: gray;
+    transition: .5s;
+    text-decoration: none;
+}

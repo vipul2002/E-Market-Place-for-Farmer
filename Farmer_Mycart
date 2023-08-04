@@ -1,0 +1,304 @@
+
+<?php 
+session_start();
+$adminlogin = $_SESSION['FarmerLoginId'];
+if (!isset($_SESSION['FarmerLoginId'])) {
+    header("location:Login_Farmer.php");
+}
+if (isset($_POST['Logout'])){
+  session_destroy();
+  header("location:Login_Farmer.php");
+  
+}
+?>    
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My cart</title>
+	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		 
+</head>
+<body><br>
+	<style type="text/css">
+      
+    
+    .navbar{
+      background-color: #00141a!important;
+    }
+
+    .nav-link{
+      margin-left:70px;
+    }
+    .carousel-item{
+      height: 400px;
+      width:100%;
+    }
+    .d-flex{
+  float: right;
+  border-radius: 20px;
+  
+ }
+
+.btn{
+  margin-left: 20px;
+  margin-right: 10px;
+
+
+
+}
+.totalamt #totalvalue{
+  float: right;
+ 
+  border:2px solid #aaa;
+
+}
+
+
+.totalamt #lb{
+float: right;
+
+font-family: sans-serif;
+font-size: 19px;
+text-transform: uppercase;
+}  
+.color{
+  background-color: #ff751a;
+  color: white;
+}
+
+  </style>
+
+  <div class="cnt">
+    <div class="img-11" style="height: 30px; width:100px;">
+      <img src="Images/logo3.png">
+    </div>
+    
+</div>
+  
+
+
+     <?php
+  if(ISSET($_POST['search'])){
+    $keyword = $_POST['search'];
+    if ($keyword==null) {
+      
+    }else{
+
+
+?><!-- seach bar code start-->
+<div>
+  
+  <?php
+  $uname=$_GET['name'];
+  echo $uname;
+    $con = mysqli_connect("localhost","root","","login1");
+    $query = mysqli_query($con, "SELECT * FROM `product_final` WHERE `name` LIKE '%$keyword%' AND progress=2 ORDER BY `name`");
+    while($res = mysqli_fetch_array($query)){
+  ?>
+  <div style="word-wrap:break-word;">
+  <tr class="text-center">
+        <td> 
+         <img  src="<?php echo $res['image']; ?>" height="100px" width="100px">  
+         </td>
+        <td> <?php echo $res['type']; ?> </td>
+        <td> <?php echo $res['name']; ?> </td>
+        <td> <?php echo $res['price']; ?> </td>
+  </tr>      
+    
+  </div>
+  <?php
+    }
+  ?>
+</div>
+<?php
+  }
+}
+?>
+<!-- seach bar code end-->
+<br><br><br><br>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="User_Home_Page.php">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Categoary
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="Product_view_grains.php">Grains</a></li>
+            <li><a class="dropdown-item" href="Product_view_vegetable.php">vegetables</a></li>
+            <li><a class="dropdown-item" href="Product_view_fruit.php">Fruits</a></li>
+             <li><a class="dropdown-item" href="Product_view_flower.php">Flowers</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="About-us-user.php">About-us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="user-contact.php">Contact-us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="User_Profile.php"><i class="fa fa-eye" aria-hidden="true"></i>View Profile</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Languges
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Marathi</a></li>
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+          </ul>
+        </li>
+              </ul>
+      
+    </div>
+  </div>
+</nav>
+		
+   <br>
+    <!-- Code for request list of product-->
+
+<div class="container" onload="totalvalue()">
+    
+	<div class="col-lg-12 col-md-5 col-11 mx-auto bg-light justify-content-center align-items-cente"><br><br>
+		<h1 class=" text-center">MY CART</h1>
+		<br>
+  
+		<table id="Table_id" class="table r ">
+			<tr class=" text-center color"style="background-color: #ff751a; color: white;" >
+			
+				<th>Product</th> 
+				<th>Price</th>
+				<th>quantity</th>
+        <th>Sub total</th>
+				<th>Remove</th>
+				
+			
+			</tr>
+			<?php
+ 
+				$con = mysqli_connect("localhost","root","","login1");
+				 $q = "SELECT * from add_cart where username='$adminlogin' && progress=0 ORDER BY name";
+
+				 $query= mysqli_query($con,$q);
+				 while ($res=mysqli_fetch_array($query)) {
+				 	# code..
+
+
+	?>
+			<tr class="text-center">
+				
+				
+				<td>
+				 <img src="<?php echo $res['image']; ?>"  class="img-fluid"height="120px" width="150px" > <br> <h6 style="text-transform: uppercase;"><?php echo $res['name']; ?> </h6>
+          
+				</td>
+				
+				<td id="price"name="price"> <?php echo $res['price']; ?> </td>
+       
+				 <td> <input type="number"  id="quantity"name="quantity" min="0" max="50" value="<?php echo $res['p_quantity']; ?>" onchange="totalvalue();updateQ(this.value,<?php echo $res['id']; ?>);"/></td>
+				<td> <input type="text" name="subtotal" readonly="true" ></td>
+				<td> <button class=" btn btn-danger " style="border-radius: 10px;"> <a href="Remove.php?id=<?php echo $res['id'];?>" class="text-white"> Remove</a> </button></td>
+				
+        
+				
+
+				
+			</tr>
+			
+			<?php 
+                }
+			?>
+		</table>
+	</div>
+  
+</div>
+<div class="totalamt">
+   <button class=" btn btn-warning " style="border-radius: 10px; float: right; margin-right: 150px;"> <a href="address1.php" class="text-white" >Place order</a> </button>
+
+  <input type="text" id="totalvalue" value="" placeholder="Total price" readonly="true" style="height: 40px;">
+  <label id="lb">Total:</label>
+</div>
+
+
+<script type="text/javascript">
+ function totalvalue()
+
+{	
+    var  i=0;
+    var a= $("#Table_id tr").length; 
+    var total=0;
+    for(i=0;i<a-1;i++){
+  
+        var x = document.getElementsByName("quantity")[i].value;
+        var amtt= document.getElementsByName("price")[i].innerHTML;
+        total =total+(x*amtt); 
+        document.getElementsByName("subtotal")[i].value=(x*amtt); 
+     
+      }
+
+  document.getElementById("totalvalue").value =total;
+  
+}
+
+window.onload=function()
+
+{ 
+    var  i=0;
+    var a= $("#Table_id tr").length; 
+    var total=0;
+    for(i=0;i<a-1;i++){
+  
+        var x = document.getElementsByName("quantity")[i].value;
+        var amtt= document.getElementsByName("price")[i].innerHTML;
+        total =total+(x*amtt); 
+        document.getElementsByName("subtotal")[i].value=(x*amtt); 
+     
+      }
+
+  document.getElementById("totalvalue").value =total;
+  
+}
+
+function updateQ(str,id){
+ 
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET","update.php?id="+id+"&q="+str, true);
+xmlhttp.send();
+}
+
+</script>
+
+
+
+
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js">
+<scriptsrc="https://code.jquery.com/jquery-3.5.1.slim.min.js"integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

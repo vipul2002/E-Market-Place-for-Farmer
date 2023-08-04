@@ -1,0 +1,28 @@
+	#hero{
+
+   		padding: 20px;
+		margin-top:50px;
+		height: 350px;
+		width: 450px;
+     margin-left: -40px;
+		box-shadow: 5px 10px 10px 5px black;
+	}
+.form-group .form-control{
+	border-radius:15px;
+	border:2px  black;
+
+	margin-top: 10px;
+}	
+#h{
+	border-radius: 20px;
+		
+	width: 200px;
+	margin-left: 102px;
+
+}
+h1{
+	font-family: sans-serif;
+	font-size:30px;
+	}
+
+

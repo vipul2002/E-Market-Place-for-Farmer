@@ -1,0 +1,29 @@
+.bg{
+	background-size: cover;
+
+
+
+}
+body{
+	background-color: white;
+}
+h1{
+margin-top: 20px;
+font-family: sans-serif;
+
+}
+
+
+
+.form-container{
+
+	background-color:;
+	padding: 30px;
+	margin-top: 10px;
+   margin-left: -140px;
+	height: 820px;
+	width: 550px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px black;
+
+}

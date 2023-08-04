@@ -1,0 +1,70 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.bg{
+	background-size: cover;
+
+}
+body{
+	background-color: white;
+}
+
+.head{
+	
+	border-radius: 5px;
+	margin-top: -10px;
+	height: 60px;
+	text-align: center;
+	
+	font-size: 30px;
+
+
+}
+
+.card{
+	width:900px;
+	margin-top: 90px;
+	margin-left: 0px;	
+	height: 70	0px;
+	border-width: 2px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px black;
+}
+
+.super{
+	border: 0;
+	outline: none;
+	width: 100%;
+	padding: 7px 0;
+	border-bottom: 2px solid #ccc;
+}
+.super ~ .focus-border{
+	position: absolute; bottom:0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #A3DD09;
+	transition: 0.4s;
+}
+.super:focus ~ .focus-border{
+	width: 100%;
+	transition: 0.4s;
+	left: 0 ;
+}
+
+.btn2{
+	
+	color: white;
+	border: 2px solid;
+	outline: none;
+	width: 400px;
+	height: 40px;
+	margin-left: 550px;
+	border-radius: 20px;
+}
+@media (min-width: 900px){
+	.col-1g-7 .mx-auto{
+	width:900px; 
+}

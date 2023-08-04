@@ -1,0 +1,144 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.bg{
+	background-size: cover;
+
+}
+.multistep-container{
+	
+	margin: 0 auto;
+
+}
+.multistep-container .active-button{
+	display: table;
+	margin: auto;
+	padding-left: 0;
+ 	overflow: hidden;
+}
+.multistep-container .active-button li{
+	display: inline-block;
+	width: 180px;
+}
+.multistep-container .active-button li .round-btn{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #ccc;
+	display: block;
+		color: #000;
+	text-align: center;
+	font-family: 'poppins';
+	font-weight:500;
+	line-height: 30px;
+	max-width: 100%;
+	margin: auto;
+	position: relative;
+	z-index: 1;
+}
+.active{
+	color: var(--pink);
+	border-color: pink;
+}
+.multistep-container .active-button li.active .round-btn{
+	background-color: var(--pink);
+	color:white;
+}
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+	position: absolute;
+	content: '';
+	margin-left: 3px;
+	width: 154px;
+	height: 3px;
+	background-color: #ccc;
+	left: -154px;
+		top : 50% ;
+		transform: translateY(-100%);
+		transform: 0.5s;
+		z-index: -1;
+	
+	}
+	.multistep-container .active-button li.active:not(:first-child) .round-btn:before{
+		background-color: var(--pink);
+	}
+
+body{
+	background: white ;
+     
+}
+
+
+.head{
+	
+	border-radius: 5px;
+	height: 60px;
+	text-align: center;
+	font-size: 30px;
+
+
+}
+
+.card{
+	width:800px;
+	margin-top: 90px;
+	margin-left: 0px;	
+	height: 780px;
+	border-width: 2px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px black;
+}
+
+.super{
+	border: 0;
+	outline: none;
+	width: 100%;
+	padding: 7px 0;
+	border-bottom: 1px solid #ccc;
+}
+.super ~ .focus-border{
+	position: absolute; 
+	bottom: 0 ;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #A3DD09;
+	transition: 0.6s;
+}
+.super:focus ~ .focus-border{
+	width: 100%;
+	transition: 0.4s;
+	left: 0px ;
+}
+.btn2{
+	
+	color: white;
+	border: none;
+	outline: none;
+	width: 180px;
+	height: 40px;
+	margin-top: 30px;
+	margin-left: 200px;	
+	border-radius: 20px;
+}
+@media (max-width: 1000px){
+	.col-1g-7 .mx-auto{
+	width:	900px; 
+}
+.card{
+	height: 870px;
+	margin-right: 40px;
+	margin-left: -20px;
+}
+
+}
+@media (max-width: 500px){
+	.col-1g-7 .mx-auto{
+	width:	900px; 
+}
+.card{
+	height: 870px;
+	margin-left: 20px;
+	margin-right: 20px;
+}

@@ -1,0 +1,242 @@
+.multistep-container{
+  
+ margin-top: 20px;
+  
+}
+.multistep-container .active-button{
+  display: table;
+  margin: auto;
+  padding-left: 0;
+  overflow: hidden;
+}
+.multistep-container .active-button li{
+  display: inline-block;
+  width: 175px;
+}
+.multistep-container .active-button li .round-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: block;
+    color: #000;
+  text-align: center;
+  font-family: 'poppins';
+  font-weight:500;
+  line-height: 30px;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.active{
+  color: var(--pink);
+  border-color: pink;
+
+}
+.active1{
+  margin-left: auto; 
+}
+.active2{
+  margin-left: auto; 
+}
+.active3{
+  margin-left: auto; 
+}
+.active4{
+  margin-left: auto; 
+}
+.multistep-container .active-button li.active .round-btn{
+  background-color: var(--pink);
+  color:white;
+}
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+  position: absolute;
+  content: '';
+  margin-left: 3px;
+  width: 148px;
+  height: 3px;
+  background-color: #ccc;
+  left: -148px;
+    top : 50% ;
+    transform: translateY(-100%);
+    transform: 0.5s;
+    z-index: -1;
+  
+  }
+  .multistep-container .active-button li.active:not(:first-child) .round-btn:before{
+    background-color: var(--pink);
+  }
+
+body{
+  background-color: white;
+}
+.head{
+  text-align: center;
+  padding-top: 10px;
+}
+.car{
+  width:800px;
+  height: 350px;
+  margin-top: 80px; 
+  border-radius: 20px;
+  border-style: 20px;
+  
+  box-shadow: 0px 0px 5px 0px black;
+}
+.r{
+  margin-top: 15px;
+  margin-left: -10px;
+  font-size: 20px;
+}
+.a{
+  margin-top: 15px;
+  margin-left: 5px;
+  font-size: 20px;
+
+}
+
+.btn{
+  
+  margin-left: 200px;
+  margin-top: 50px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+@media(max-width: 800px){
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 125px;
+  }
+  .multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 95px;
+    left: -98px;
+  }
+  .car{
+    width: 121%;
+    margin-left:  -50px;
+  }
+  }
+
+@media(max-width: 700px){
+   
+  .multistep-container{
+    
+  }
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 125px;
+  }
+  .multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 96px;
+    left: -98px;
+  }
+  .car{
+    width: 100%;
+    margin-left: 10px;
+  }
+  .btn{
+    margin-left: 140px;
+  }
+}
+@media(max-width: 600px){
+  
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 95px;
+  }
+.multistep-container .active-button {
+ 
+}
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 66px;
+    left: -68px;
+  }
+  .car{
+    width: 460px;
+    margin-left: 10px;
+  }
+  .btn{
+    margin-left: 90px;
+  }
+}
+
+@media(max-width: 480px){
+  
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 95px;
+  }
+.multistep-container .active-button {
+ 
+}
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 66px;
+    left: -68px;
+  }
+  .car{
+   margin-left: 10px;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px white;
+  }
+  .btn{
+    margin-left: 80px;
+  }
+}
+
+@media(max-width: 420px){
+  
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 75px;
+  }
+.multistep-container .active-button {
+ 
+}
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 46px;
+    left: -48px;
+  }
+  .car{
+   margin-left: 10px;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px white;
+  }
+  .btn{
+    margin-left: 80px;
+  }
+}
+@media(max-width: 380px){
+    .multistep-container{
+    
+  }
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 80px;
+  }
+
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 50px;
+    left: -53px;
+  }
+  .car{
+    margin-left: 0px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+}
+@media(max-width: 280px){
+   
+  .multistep-container .active-button li{
+    display: inline-block;
+    width: 70px;
+  }
+.multistep-container .active-button {
+ 
+}
+.multistep-container .active-button li:not(:first-child) .round-btn:before{
+       width: 40px;
+    left: -43px;
+  }
+}
