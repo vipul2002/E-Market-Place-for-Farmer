@@ -10,6 +10,10 @@ E-market place for the farmers is a platform for farmers to sell their product (
 **5**. Use ```localhost/Farmers``` url in browser to open the project
 
 
+
+
+
+
 ![image](https://github.com/vipul2002/E-Market-Place-for-Farmer/assets/67277915/dedf8c68-5a28-4aae-90d6-f5b4cfa20c16)
 
 
