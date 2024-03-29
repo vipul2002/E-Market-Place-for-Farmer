@@ -1,7 +1,7 @@
 E-market place for the farmers is a platform for farmers to sell their product (crops) online.The Platform consits all the functionality of E-Commerce Website Like add-to-cart Functionality, Buying product, Payment gateway, Invoice Generation etc. 
 
 
-# Farmers_Market
+# E-Market-Place-for-Farmer
 **1**. Install xampp control pannel<br>
 **2**. Save the folder in following location:<br>
  ``` C:\xampp\htdocs```<br>
